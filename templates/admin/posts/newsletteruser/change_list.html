@@ -1,0 +1,6 @@
+{% extends "admin/change_list.html" %}
+
+{% block object-tools %}
+    {{ block.super }}
+    <a href="{% url 'admin:export_emails_to_csv' %}" class="button btn btn-secondary custom-button">Export All Emails to CSV</a>
+{% endblock %}

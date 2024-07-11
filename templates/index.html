@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}Abdullah's Blog{% endblock title %}
+
+{% block css %}
+<style>
+    .header {
+        padding: 20px;
+        font-size: 40px;
+        text-align: center;
+        background: #ffffff;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .card {
+        background-color: #ffffff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card a {
+        text-decoration: none;
+        color: #000000;
+    }
+
+    .card h2 {
+        margin-top: 0;
+    }
+
+    .card h5 {
+        color: #6c757d;
+        margin-bottom: 15px;
+    }
+
+    .card p {
+        margin-bottom: 0;
+    }
+
+    .view-all-button {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .view-all-button a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff; /* Blue color */
+        color: #ffffff; /* White text color */
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .view-all-button a:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+</style>
+{% endblock css %}
+
+{% block body %}
+<div class="header">
+    <h2>Abdullah's Blog</h2>
+</div>
+
+<div class="container">
+    <div class="leftcolumn">
+        {% for post in latest_posts %}
+        <div class="card">
+            <a href="/post/{{ post.id }}">
+                <h2>{{ post.title }}</h2>
+                <h5>{{ post.created_at|date:"F d, Y" }}</h5>
+                <p>{{ post.content|truncatewords_html:20|safe }}</p>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="view-all-button">
+        <a href="/blog" class="my-1">View All Blogs</a>
+    </div>
+</div>
+{% endblock body %}

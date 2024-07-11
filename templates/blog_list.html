@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+All Blog Posts
+{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1>All Blog Posts</h1>
+            {% for post in all_posts %}
+            <div class="card mt-4">
+                <div class="card-body">
+                    <a href="{% url 'post_detail' pk=post.pk %}">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                    </a>
+                    <h5 class="card-subtitle mb-2 text-muted">{{ post.created_at|date:"F d, Y" }}</h5>
+                    <p class="card-text">{{ post.content|truncatewords_html:20|safe }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock body %}

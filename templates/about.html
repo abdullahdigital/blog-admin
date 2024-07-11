@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block css %}
+<style>
+    /* Custom styles for About page */
+    .about-section {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+    }
+
+    .about-section h2 {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 40px;
+        color: #343a40;
+    }
+
+    .about-section p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #6c757d;
+    }
+
+    .mission-section,
+    .commitment-section,
+    .vision-section {
+        margin-top: 60px;
+    }
+
+    .mission-section h4,
+    .commitment-section h4,
+    .vision-section h4 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #343a40;
+    }
+
+    .mission-section p,
+    .commitment-section p,
+    .vision-section p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #6c757d;
+    }
+
+    .unique-section ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .unique-section ul li {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #6c757d;
+        margin-bottom: 10px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .about-section {
+            padding: 40px 0;
+        }
+
+        .about-section h2 {
+            font-size: 28px;
+        }
+
+        .mission-section h4,
+        .commitment-section h4,
+        .vision-section h4 {
+            font-size: 20px;
+        }
+    }
+</style>
+{% endblock css %}
+
+{% block body %}
+<div class="container-fluid about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h2>About Us</h2>
+                <p class="lead">Welcome to Abdullah's Blog, where innovation meets web development excellence. With a passion for learning and a commitment to helping others, we aim to inspire and inform web enthusiasts worldwide.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="mission-section">
+                <h4>Mission</h4>
+                <p>At Abdullah's Blog, our mission is to showcase innovative projects and provide valuable insights into web development technologies.</p>
+            </div>
+
+            <div class="unique-section">
+                <h4>What Sets Us Apart</h4>
+                <ul>
+                    <li><strong>Unique Content:</strong> We strive to bring you unique and innovative content that goes beyond the basics.</li>
+                    <li><strong>Experience:</strong> With over 2 years of hands-on experience, we bring a wealth of practical knowledge to every post.</li>
+                </ul>
+            </div>
+
+            <div class="commitment-section">
+                <h4>Our Commitment</h4>
+                <p>We're committed to creating an engaging platform that fosters growth and creativity in the web development community.</p>
+            </div>
+
+            <div class="vision-section">
+                <h4>Vision for the Future</h4>
+                <p>Looking ahead, our vision is continuous growth. We aim to expand our reach, offer more valuable resources, and connect with a broader audience passionate about web development.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

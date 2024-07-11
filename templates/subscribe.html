@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Subscribe to Newsletter{% endblock title %}
+
+{% block css %}
+<style>
+    /* Add specific CSS styles for subscribe.html if needed */
+</style>
+{% endblock css %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Subscribe to Our Newsletter</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{% url 'subscribe' %}">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary mt-3">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}
